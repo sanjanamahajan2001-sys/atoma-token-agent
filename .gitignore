@@ -1,0 +1,17 @@
+# Compiled binaries
+atoma
+*.exe
+*.bin
+*.out
+
+# Audit CSV Reports
+*.csv
+audit_report.csv
+batch_summary.csv
+prod_batch_summary.csv
+
+# IDEs & local configurations
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

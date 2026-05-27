@@ -1,0 +1,3 @@
+{"messages": [{"role": "user", "content": "Sentence one for JSONL test."}]}
+{"messages": [{"role": "user", "content": "Sentence two for JSONL test."}]}
+{"messages": [{"role": "user", "content": "Sentence three for JSONL test."}]}

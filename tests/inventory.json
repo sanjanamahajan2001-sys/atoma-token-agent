@@ -1,0 +1,9 @@
+{
+  "inventory": [
+    { "id": 1, "sku": "ATOMA-001", "name": "Standard Token Counter", "stock": 500, "price": 0.00 },
+    { "id": 2, "sku": "ATOMA-002", "name": "Premium Token Counter", "stock": 250, "price": 49.99 },
+    { "id": 3, "sku": "ATOMA-003", "name": "Enterprise Logic Engine", "stock": 100, "price": 499.00 }
+  ],
+  "warehouse": "Global Dist 1",
+  "status": "Ready"
+}

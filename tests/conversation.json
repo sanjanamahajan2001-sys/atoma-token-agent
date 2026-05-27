@@ -1,0 +1,14 @@
+[
+  {
+    "role": "system",
+    "content": "You are a helpful assistant specialized in quantum physics."
+  },
+  {
+    "role": "user",
+    "content": "What is superposition?"
+  },
+  {
+    "role": "assistant",
+    "content": "Superposition is a fundamental principle of quantum mechanics where a physical system exists in multiple states simultaneously until it is measured."
+  }
+]
