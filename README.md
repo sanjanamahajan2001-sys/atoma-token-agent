@@ -121,6 +121,8 @@ token-agent/
 These actual execution results were captured directly from the WSL runtime environment, demonstrating Atoma's auditing and minification power:
 
 ### 1. Multi-Provider Cost Comparison Proof
+
+#### A. Small String Prompt Audit (6 Tokens)
 When running `./atoma analyze "Please explain quantum computing basically." --compare`, Atoma executes standard cl100k_base and estimation ratio calculations, returning:
 ```text
                              Atoma: Token Analyser                              
@@ -135,6 +137,23 @@ gemini    | gemini-1.5-pro | 6 (est.)    | 2000000        | 0.00%   | $0.0000
 # Analysis Summary
  INFO  Input Length: 43 characters
  INFO  Approximate Words: 5
+```
+
+#### B. Large Text File Audit (Showing Real Non-Zero Costs)
+When running `./atoma analyze -f "tests/verbose_prompt.txt" --compare` (or auditing parsed source codes), Atoma calculates high-fidelity costs based on context window utilization and dynamic input prices, returning:
+```text
+                             Atoma: Token Analyser                              
+
+Using prices from: configs/prices.yaml
+
+Provider  | Model          | Token Count | Context Window | Usage % | Est. Cost ($)
+openai    | gpt-4o         | 2430        | 128000         | 1.90%   | $0.0121
+anthropic | claude-3.5     | 1259 (est.) | 200000         | 0.63%   | $0.0038
+gemini    | gemini-1.5-pro | 1119 (est.) | 2000000        | 0.06%   | $0.0039
+
+# Analysis Summary
+ INFO  Input Length: 8572 characters
+ INFO  Approximate Words: 933
 ```
 
 ### 2. Prompt Optimization Rules Engine Proof
