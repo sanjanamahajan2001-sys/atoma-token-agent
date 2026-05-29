@@ -196,13 +196,15 @@ Evaluates token counts, pricing, context window occupancy, and reasoning delta a
 
 # Audit chat-history payloads directly
 ./atoma analyze -f "tests/conversation.json" --chat --compare
-<img width="1918" height="942" alt="image" src="https://github.com/user-attachments/assets/3d1e6e59-a62b-4a37-991d-0b69166814fc" />
 
 # Reasoning Delta Audit (calculates difference between billed tokens and raw inputs)
 ./atoma analyze -f "tests/conversation.json" --actual 1550 --compare
-<img width="1527" height="952" alt="image" src="https://github.com/user-attachments/assets/09e53f69-48af-4cf8-aa73-6565b8babac5" />
 
 ```
+<img width="1918" height="942" alt="image" src="https://github.com/user-attachments/assets/3d1e6e59-a62b-4a37-991d-0b69166814fc" />
+
+<img width="1527" height="952" alt="image" src="https://github.com/user-attachments/assets/09e53f69-48af-4cf8-aa73-6565b8babac5" />
+
 *   **The Reasoning Delta Logic**:
     Models like `o1`/`o3` utilize "invisible" reasoning tokens that are billed but do not show up in the final API response. By providing the `--actual` billed count, Atoma isolates the reasoning delta, helping developers flag "over-thinking" or expensive prompts.
 
