@@ -138,6 +138,7 @@ gemini    | gemini-1.5-pro | 6 (est.)    | 2000000        | 0.00%   | $0.0000
  INFO  Input Length: 43 characters
  INFO  Approximate Words: 5
 ```
+<img width="1477" height="397" alt="image" src="https://github.com/user-attachments/assets/660bbb9a-ffa4-4758-a537-d397fb51fb12" />
 
 #### B. Large Text File Audit (Showing Real Non-Zero Costs)
 When running `./atoma analyze -f "tests/verbose_prompt.txt" --compare` (or auditing parsed source codes), Atoma calculates high-fidelity costs based on context window utilization and dynamic input prices, returning:
@@ -155,6 +156,7 @@ gemini    | gemini-1.5-pro | 1119 (est.) | 2000000        | 0.06%   | $0.0039
  INFO  Input Length: 8572 characters
  INFO  Approximate Words: 933
 ```
+<img width="1913" height="432" alt="image" src="https://github.com/user-attachments/assets/4c7b3a75-628b-4c4c-ad3b-49dd292970a3" />
 
 ### 2. Prompt Optimization Rules Engine Proof
 When running `./atoma optimize "Could you please basically explain quantum computing basically at the end of the day?"`, Atoma's cleanup regex matches redundant stop phrases, returning:
@@ -174,6 +176,7 @@ Optimized:  Could you explain quantum computing finally?
 Metric | Original | Optimized | Savings
 Tokens | 15       | 7         | 8 (53%)
 ```
+<img width="1855" height="671" alt="image" src="https://github.com/user-attachments/assets/4af240ff-17e8-4e7d-9423-50f5b65b5e90" />
 
 ---
 
@@ -193,9 +196,12 @@ Evaluates token counts, pricing, context window occupancy, and reasoning delta a
 
 # Audit chat-history payloads directly
 ./atoma analyze -f "tests/conversation.json" --chat --compare
+<img width="1918" height="942" alt="image" src="https://github.com/user-attachments/assets/3d1e6e59-a62b-4a37-991d-0b69166814fc" />
 
 # Reasoning Delta Audit (calculates difference between billed tokens and raw inputs)
 ./atoma analyze -f "tests/conversation.json" --actual 1550 --compare
+<img width="1527" height="952" alt="image" src="https://github.com/user-attachments/assets/09e53f69-48af-4cf8-aa73-6565b8babac5" />
+
 ```
 *   **The Reasoning Delta Logic**:
     Models like `o1`/`o3` utilize "invisible" reasoning tokens that are billed but do not show up in the final API response. By providing the `--actual` billed count, Atoma isolates the reasoning delta, helping developers flag "over-thinking" or expensive prompts.
